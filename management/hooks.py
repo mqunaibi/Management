@@ -243,18 +243,12 @@ app_license = "agpl-3.0"
 # }
 
 fixtures = [
-    {
-        "dt": "Custom Field",
-        "filters": [["module", "=", "Management"]]
-    },
-    {
-        "dt": "Property Setter",
-        "filters": [["module", "=", "Management"]]
-    },
+    {"doctype": "Custom Field"},
+    {"doctype": "Property Setter"},
+    {"doctype": "Client Script"},
     {"doctype": "Meeting"},
     {"doctype": "Meeting Minutes"},
     {"doctype": "Meeting Action"},
-    {"doctype": "Meeting Attendance"},
-    {"doctype": "Notification"}, 
-    {"doctype": "Client Script"}
+    {"doctype": "Meeting Attendance"}
 ]
+

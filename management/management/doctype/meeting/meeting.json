@@ -15,10 +15,11 @@
   "end_time",
   "meeting_manager",
   "section_break_kpzf",
-  "attendance",
+  "attendees",
   "related_project",
   "section_break_ebyp",
   "meeting_agenda",
+  "attendee_emails",
   "amended_from"
  ],
  "fields": [
@@ -54,12 +55,6 @@
    "options": "Employee"
   },
   {
-   "fieldname": "attendance",
-   "fieldtype": "Table",
-   "label": "Attendance",
-   "options": "Meeting Attendance"
-  },
-  {
    "fieldname": "related_project",
    "fieldtype": "Link",
    "label": "Project Link",
@@ -91,6 +86,17 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "attendees",
+   "fieldtype": "Table",
+   "label": "Attendance",
+   "options": "Meeting Attendance"
+  },
+  {
+   "fieldname": "attendee_emails",
+   "fieldtype": "Small Text",
+   "label": "Attendance Emails"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -101,7 +107,7 @@
    "link_fieldname": "meeting_id"
   }
  ],
- "modified": "2025-02-12 06:00:34.607397",
+ "modified": "2025-02-12 07:57:04.838281",
  "modified_by": "Administrator",
  "module": "Management",
  "name": "Meeting",

@@ -28,6 +28,7 @@
    "search_index": 1
   },
   {
+   "fetch_from": "meeting_id.meeting_subject",
    "fieldname": "meeting_subject",
    "fieldtype": "Data",
    "label": "Meeting Subject"
@@ -80,7 +81,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-12 06:10:07.368306",
+ "modified": "2025-02-12 08:11:08.445805",
  "modified_by": "Administrator",
  "module": "Management",
  "name": "Meeting Minutes",
