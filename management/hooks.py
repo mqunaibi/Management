@@ -242,3 +242,19 @@ app_license = "agpl-3.0"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [["module", "=", "Management"]]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [["module", "=", "Management"]]
+    },
+    {"doctype": "Meeting"},
+    {"doctype": "Meeting Minutes"},
+    {"doctype": "Meeting Action"},
+    {"doctype": "Meeting Attendance"},
+    {"doctype": "Notification"}, 
+    {"doctype": "Client Script"}
+]

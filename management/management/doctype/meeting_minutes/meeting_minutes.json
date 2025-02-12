@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-12 05:54:01.744156",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "meeting_id",
+  "next_meeting",
+  "column_break_biqm",
+  "meeting_subject",
+  "section_break_awzi",
+  "meeting_action",
+  "section_break_mzld",
+  "details",
+  "attendee_emails",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "meeting_id",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Meeting ID",
+   "options": "Meeting",
+   "search_index": 1
+  },
+  {
+   "fieldname": "meeting_subject",
+   "fieldtype": "Data",
+   "label": "Meeting Subject"
+  },
+  {
+   "fieldname": "next_meeting",
+   "fieldtype": "Date",
+   "label": "Next Meeting"
+  },
+  {
+   "fieldname": "meeting_action",
+   "fieldtype": "Table",
+   "label": "Action",
+   "options": "Meeting Action"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Text Editor",
+   "label": "Details"
+  },
+  {
+   "fieldname": "attendee_emails",
+   "fieldtype": "Small Text",
+   "label": "Attendance Emails",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_biqm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_awzi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_mzld",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Meeting Minutes",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-12 06:10:07.368306",
+ "modified_by": "Administrator",
+ "module": "Management",
+ "name": "Meeting Minutes",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "meeting_id"
+}

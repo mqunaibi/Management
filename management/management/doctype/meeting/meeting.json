@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Meeting-.####",
+ "creation": "2025-02-12 05:53:49.936024",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "meeting_subject",
+  "meeting_time",
+  "location",
+  "column_break_gorg",
+  "meeting_date",
+  "end_time",
+  "meeting_manager",
+  "section_break_kpzf",
+  "attendance",
+  "related_project",
+  "section_break_ebyp",
+  "meeting_agenda",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "meeting_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "meeting_subject",
+   "fieldtype": "Data",
+   "label": "Meeting Subject"
+  },
+  {
+   "fieldname": "meeting_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "meeting_manager",
+   "fieldtype": "Link",
+   "label": "Meeting Manager",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "attendance",
+   "fieldtype": "Table",
+   "label": "Attendance",
+   "options": "Meeting Attendance"
+  },
+  {
+   "fieldname": "related_project",
+   "fieldtype": "Link",
+   "label": "Project Link",
+   "options": "Project"
+  },
+  {
+   "fieldname": "meeting_agenda",
+   "fieldtype": "Text Editor",
+   "label": "Meeting Agenda"
+  },
+  {
+   "fieldname": "column_break_gorg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kpzf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_ebyp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Meeting",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Meeting Minutes",
+   "link_fieldname": "meeting_id"
+  }
+ ],
+ "modified": "2025-02-12 06:00:34.607397",
+ "modified_by": "Administrator",
+ "module": "Management",
+ "name": "Meeting",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
