@@ -251,6 +251,9 @@ fixtures = [
     {"doctype": "Meeting Action"},
     {"doctype": "Meeting Attendance"},
     {"doctype": "Role"},
-    {"doctype": "Permit"}
+    {"doctype": "Permit"},
+    {"doctype": "Workflow"},
+    {"doctype": "Workflow State"},
+    {"doctype": "Workflow Action Master"}
 ]
 

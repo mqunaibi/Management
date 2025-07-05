@@ -74,7 +74,8 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Status"
+   "label": "Status",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_xcv3",
@@ -227,7 +228,8 @@
   {
    "fieldname": "license_type",
    "fieldtype": "Select",
-   "label": "License Type"
+   "label": "License Type",
+   "options": "Standard License"
   },
   {
    "fieldname": "no_of_days_for_the_license",
@@ -305,7 +307,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-05 23:44:09.700733",
+ "modified": "2025-07-06 00:00:13.336835",
  "modified_by": "Administrator",
  "module": "Management",
  "name": "Permit",
