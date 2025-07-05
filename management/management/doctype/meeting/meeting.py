@@ -5,7 +5,7 @@ import frappe
 from frappe.model.document import Document
 
 class Meeting(Document):
-    def after_insert(self):
+    def on_submit(self):
         self.send_invitation_emails()
 
     def send_invitation_emails(self):

@@ -249,6 +249,7 @@ fixtures = [
     {"doctype": "Meeting"},
     {"doctype": "Meeting Minutes"},
     {"doctype": "Meeting Action"},
-    {"doctype": "Meeting Attendance"}
+    {"doctype": "Meeting Attendance"},
+    {"doctype": "Role"}
 ]
 
