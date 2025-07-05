@@ -1,10 +1,29 @@
+
 # Copyright (c) 2025, Best Performance and contributors
 # For license information, please see license.txt
 
 import frappe
 from frappe.model.document import Document
+from frappe import _
 
 class Meeting(Document):
+
+    def validate(self):
+        overlapping_meeting = frappe.db.exists(
+            "Meeting",
+            {
+                "name": ["!=", self.name],
+                "meeting_date": self.meeting_date,
+                "meeting_time": self.meeting_time,
+                "location": self.location
+            }
+        )
+
+        if overlapping_meeting:
+            frappe.throw(
+                _("يوجد اجتماع آخر بنفس الوقت والمكان (الاجتماع: {0})").format(overlapping_meeting)
+            )
+
     def on_submit(self):
         self.send_invitation_emails()
 
@@ -35,11 +54,8 @@ class Meeting(Document):
     شكرًا لكم،</p>
 </div>
 """
-
-
                 frappe.sendmail(
                     recipients=[attendee.email],
                     subject=f"دعوة لحضور الاجتماع: {self.meeting_subject}",
                     message=html
                 )
-
