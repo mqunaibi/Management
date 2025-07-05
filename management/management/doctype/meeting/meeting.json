@@ -9,11 +9,14 @@
  "field_order": [
   "meeting_subject",
   "meeting_time",
-  "location",
+  "meeting_manager",
   "column_break_gorg",
   "meeting_date",
   "end_time",
-  "meeting_manager",
+  "section_break_efcz",
+  "location",
+  "column_break_wjiz",
+  "meeting_url",
   "section_break_kpzf",
   "attendees",
   "related_project",
@@ -97,6 +100,19 @@
    "fieldname": "attendee_emails",
    "fieldtype": "Small Text",
    "label": "Attendance Emails"
+  },
+  {
+   "fieldname": "meeting_url",
+   "fieldtype": "Data",
+   "label": "Meeting url"
+  },
+  {
+   "fieldname": "section_break_efcz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_wjiz",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -107,7 +123,7 @@
    "link_fieldname": "meeting_id"
   }
  ],
- "modified": "2025-02-12 07:57:04.838281",
+ "modified": "2025-07-05 20:22:59.914985",
  "modified_by": "Administrator",
  "module": "Management",
  "name": "Meeting",
@@ -127,6 +143,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
