@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="management",   
+    name="management",
     version="0.0.1",
     description="Management App for managing meetings and related tasks in ERPNext",
     long_description=long_description,
@@ -16,4 +16,9 @@ setup(
     zip_safe=False,
     include_package_data=True,
     install_requires=("frappe",),
+    entry_points={
+        'frappe.commands': [
+            'fix-css-shadow = management.management.commands.utils.fix_css_shadow:execute',
+        ]
+    },
 )
