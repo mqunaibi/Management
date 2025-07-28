@@ -84,7 +84,7 @@ from frappe.translate import update_translations
 # ------------
 
 # before_install = "management.install.before_install"
-after_install = "management.install.after_install"
+# after_install = "management.install.after_install"
 
 # Uninstallation
 # ------------

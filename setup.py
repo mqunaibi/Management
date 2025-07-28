@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="management",
-    version="0.0.1",
+    version="2.0.1",
     description="Management App for managing meetings and related tasks in ERPNext",
     long_description=long_description,
     long_description_content_type="text/markdown",
