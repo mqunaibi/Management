@@ -258,14 +258,9 @@ fixtures = [
     {"doctype": "Workflow Action Master"}
 ]
 
-update_translations(
-    app="erpnext",
-    lang="ar",
-    translation_dict_path="management/translation_resources/erpnext/ar.csv"
-)
-
-update_translations(
-    app="hrms",
-    lang="ar",
-    translation_dict_path="management/translation_resources/hrms/ar.csv"
-)
+translated_languages = {
+    "ar": [
+        "management.translation_resources.erpnext.ar",
+        "management.translation_resources.hrms.ar"
+    ]
+}
