@@ -1,34 +1,28 @@
 import os
 import shutil
-import frappe
 
 def after_install():
-    # copy to erpnext و hrms
-    try:
-        shutil.copyfile('management/translations/ar_erpnext.csv', '/home/frappe/frappe-bench/apps/erpnext/erpnext/translations/ar.csv')
-        shutil.copyfile('management/translations/ar_hrms.csv', '/home/frappe/frappe-bench/apps/hrms/hrms/translations/ar.csv')
-        print("✔ Done")
-    except Exception as e:
-        print(f"❌ Error: {e}")
+    print("Running after_install script for Management app...")
 
-def copy_translation_files():
-    base_path = "/home/frappe/frappe-bench/apps"
-    app_path = os.path.dirname(os.path.abspath(__file__))
-
-    files = {
-        "erpnext": {
-            "src": os.path.join(app_path, "translation_resources", "erpnext", "ar.csv"),
-            "dst": os.path.join(base_path, "erpnext", "erpnext", "translations", "ar.csv"),
+    translation_targets = [
+        {
+            "app": "erpnext",
+            "target_path": "/home/frappe/frappe-bench/apps/erpnext/erpnext/translations/ar.csv",
+            "source_path": "/home/frappe/frappe-bench/apps/management/management/translation_resources/erpnext/ar.csv"
         },
-        "hrms": {
-            "src": os.path.join(app_path, "translation_resources", "hrms", "ar.csv"),
-            "dst": os.path.join(base_path, "hrms", "hrms", "translations", "ar.csv"),
+        {
+            "app": "hrms",
+            "target_path": "/home/frappe/frappe-bench/apps/hrms/hrms/translations/ar.csv",
+            "source_path": "/home/frappe/frappe-bench/apps/management/management/translation_resources/hrms/ar.csv"
         }
-    }
+    ]
 
-    for app, paths in files.items():
+    for t in translation_targets:
         try:
-            shutil.copyfile(paths["src"], paths["dst"])
-            print(f"[✓] Updated translation for {app}: {paths['dst']}")
+            if os.path.exists(t["source_path"]):
+                shutil.copyfile(t["source_path"], t["target_path"])
+                print(f"✅ Copied translation for {t['app']} successfully.")
+            else:
+                print(f"❌ Source file not found → {t['source_path']}")
         except Exception as e:
-            print(f"[✗] Failed to update translation for {app}: {e}")
+            print(f"❌ Failed to copy translation for {t['app']}: {e}")
