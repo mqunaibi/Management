@@ -4,6 +4,7 @@ app_publisher = "Best Performance"
 app_description = "App for managing meetings"
 app_email = "info@best-performance.uk"
 app_license = "agpl-3.0"
+from frappe.translate import update_translations
 
 # Apps
 # ------------------
@@ -257,3 +258,14 @@ fixtures = [
     {"doctype": "Workflow Action Master"}
 ]
 
+update_translations(
+    app="erpnext",
+    lang="ar",
+    translation_dict_path="management/translation_resources/erpnext/ar.csv"
+)
+
+update_translations(
+    app="hrms",
+    lang="ar",
+    translation_dict_path="management/translation_resources/hrms/ar.csv"
+)
