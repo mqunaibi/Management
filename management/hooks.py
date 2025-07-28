@@ -83,7 +83,7 @@ app_license = "agpl-3.0"
 # ------------
 
 # before_install = "management.install.before_install"
-# after_install = "management.install.after_install"
+after_install = "management.install.after_install"
 
 # Uninstallation
 # ------------
