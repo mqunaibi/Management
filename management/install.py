@@ -2,6 +2,15 @@ import os
 import shutil
 import frappe
 
+def after_install():
+    # copy to erpnext و hrms
+    try:
+        shutil.copyfile('management/translations/ar_erpnext.csv', '/home/frappe/frappe-bench/apps/erpnext/erpnext/translations/ar.csv')
+        shutil.copyfile('management/translations/ar_hrms.csv', '/home/frappe/frappe-bench/apps/hrms/hrms/translations/ar.csv')
+        print("✔ Done")
+    except Exception as e:
+        print(f"❌ Error: {e}")
+
 def copy_translation_files():
     base_path = "/home/frappe/frappe-bench/apps"
     app_path = os.path.dirname(os.path.abspath(__file__))
