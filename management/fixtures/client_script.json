@@ -2,6 +2,61 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Meeting",
+  "enabled": 1,
+  "modified": "2025-06-30 00:02:52.973874",
+  "module": "",
+  "name": "Hide User",
+  "script": "frappe.ui.form.on('Meeting', {\r\n    onload: function(frm) {\r\n        frm.fields_dict['attendees'].grid.get_field('attendee_name').get_query = function(doc, cdt, cdn) {\r\n            return {\r\n                filters: {\r\n                    status: \"Active\"\r\n                }\r\n            };\r\n        };\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2025-06-29 03:25:17.967126",
+  "module": null,
+  "name": "BOQ Filter",
+  "script": "frappe.ui.form.on('BOQ', {\r\n    onload: function(frm) {\r\n        frm.fields_dict['items'].grid.get_field('item_code').get_query = function(doc, cdt, cdn) {\r\n            let child = locals[cdt][cdn];\r\n            return {\r\n                query: \"erpnext.controllers.queries.item_query\",\r\n                filters: {\r\n                    'price_list': doc.selling_price_list\r\n                }\r\n            };\r\n        };\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Account",
+  "enabled": 1,
+  "modified": "2025-07-11 23:42:12.665000",
+  "module": null,
+  "name": "Acc-Series",
+  "script": "frappe.ui.form.on('Account', {\r\n    account_type(frm) {\r\n        if (frm.doc.account_type == \"Asset\") {\r\n            frm.set_value(\"custom_naming_series\", \"AST-.####\");\r\n        } else if (frm.doc.account_type == \"Liability\") {\r\n            frm.set_value(\"custom_naming_series\", \"LIA-.####\");\r\n        } else if (frm.doc.account_type == \"Income Account\") {\r\n            frm.set_value(\"custom_naming_series\", \"INC-.####\");\r\n        }\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 1,
+  "modified": "2025-07-09 02:58:30.852919",
+  "module": null,
+  "name": "Allow Multiple PO for BOQ",
+  "script": "frappe.ui.form.on('Sales Order', {\r\n    po_no: function (frm) {\r\n        if (!frm.doc.po_no || !frm.doc.customer) return;\r\n\r\n        frappe.call({\r\n            method: 'frappe.client.get_list',\r\n            args: {\r\n                doctype: 'Sales Order',\r\n                filters: {\r\n                    po_no: frm.doc.po_no,\r\n                    customer: frm.doc.customer,\r\n                    docstatus: ['<', 2],\r\n                    name: ['!=', frm.doc.name]\r\n                },\r\n                fields: ['name']\r\n            },\r\n            callback: function (r) {\r\n                if (r.message && r.message.length > 0) {\r\n                    frappe.msgprint({\r\n                        title: __('Warning'),\r\n                        message: __('This Purchase Order Number is already used in another Sales Order.'),\r\n                        indicator: 'orange'\r\n                    });\r\n                }\r\n            }\r\n        });\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Request",
+  "enabled": 1,
+  "modified": "2025-07-16 00:02:41.667670",
+  "module": null,
+  "name": "Item Fillter",
+  "script": "frappe.ui.form.on('Item Request', {\r\n    item_code: {\r\n        get_query: function(frm, cdt, cdn) {\r\n            return {\r\n                filters: {\r\n                    party_type: frm.doc.party_type\r\n                }\r\n            };\r\n        }\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
   "dt": "Sales Order",
   "enabled": 1,
   "modified": "2025-06-30 06:54:05.854155",

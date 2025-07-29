@@ -255,7 +255,8 @@ fixtures = [
     {"doctype": "Permit"},
     {"doctype": "Workflow"},
     {"doctype": "Workflow State"},
-    {"doctype": "Workflow Action Master"}
+    {"doctype": "Workflow Action Master"},
+    {"dt": "Custom Translation"}
 ]
 
 translated_languages = {

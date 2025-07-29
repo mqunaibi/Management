@@ -33,5 +33,12 @@
   "modified": "2025-07-06 00:11:22.863748",
   "name": "Final Submit",
   "workflow_action_name": "Final Submit"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-04 03:48:10.410983",
+  "name": "Submit for Approval",
+  "workflow_action_name": "Submit for Approval"
  }
 ]
